@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html ng-app="" xmlns:MadCap="https://www.madcapsoftware.com/Schemas/MadCap.xsd" d1p1:lastBlockDepth="17" d1p1:lastHeight="1165" d1p1:lastWidth="955" xmlns:d1p1="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-toc-path="">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta charset="utf-8" />
+        <meta name="description" content="" />
+        <meta name="author" content="" /><title>Bootstrap, from Twitter</title>
+        <script type="text/javascript">/* <![CDATA[ */ 
+	
+			var _gaq = _gaq || []; 
+			_gaq.push(['_setAccount', 'UA-39626316-1']); 
+			_gaq.push(['_trackPageview']); 
+	
+			(function() { 
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; 
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; 
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); 
+		})();/* ]]> */</script>
+        <script>/* <![CDATA[ */jQuery(function ($) {
+			var $active = $('#sample .panel-collapse.in').prev().addClass('active');
+			$active.find('a').append('<span class="glyphicon glyphicon-minus pull-right"></span>');
+			$('#sample .panel-heading').not($active).find('a').prepend('<span class="glyphicon glyphicon-plus pull-right"></span>');
+			$('#sample').on('show.bs.collapse', function (e)
+			{
+			$('#sample .panel-heading.active').removeClass('active').find('.glyphicon').toggleClass('glyphicon-plus glyphicon-minus');
+			$(e.target).prev().addClass('active').find('.glyphicon').toggleClass('glyphicon-plus glyphicon-minus');
+			});
+			$('#sample').on('hide.bs.collapse', function (e)
+			{
+			$(e.target).prev().removeClass('active').find('.glyphicon').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+			});
+		});/* ]]> */</script>
+        <link href="resources/tablestyles/kbtable2.css" rel="stylesheet" />
+        <link href="Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" />
+        <link href="Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" />
+        <link href="Skins/Default/Stylesheets/Topic.css" rel="stylesheet" />
+        <style>
+			/* Sticky Footer */
+			* {
+			margin: 0;
+			}
+			html, body {
+			height: 100%;
+			}
+			.wrapper {
+			min-height: 100%;
+			height: auto !important;
+			height: 100%;
+			margin: 0 auto -4em;
+			}
+			.footer, .push {
+			clear: both;
+		}</style>
+        <style>
+			.demo-long {
+			margin-top: 100px;
+			margin-bottom: 200px;
+			}
+		</style>
+        <link href="resources/stylesheets/bootstrap.css" rel="stylesheet" />
+        <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js">
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js">
+        </script>
+        <script src="Resources/Scripts/custom.modernizr.js">
+        </script>
+        <script src="Resources/Scripts/jquery.min.js">
+        </script>
+        <script src="Resources/Scripts/foundation.min.js">
+        </script>
+        <script src="Resources/Scripts/plugins.min.js">
+        </script>
+        <script src="Resources/Scripts/require.min.js">
+        </script>
+        <script src="Resources/Scripts/require.config.js">
+        </script>
+        <script src="Resources/Scripts/MadCapAll.js">
+        </script>
+    </head>
+    <body>
+        <!-- This snippet is the top nav -->
+        <header class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse"><span class="sr-only">Toggle Navigation </span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                    </button>
+                    <div class="navbar-brand"><a href="http://www.forte.net/devdocs/"><p><img style="vertical-align: middle;" src="resources/images/devdocslogo2.png" /></p></a>
+                    </div>
+                </div>
+                <div class="collapse navbar-collapse navHeaderCollapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown" value="1"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Checkout<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li value="1"><a href="a_checkout/co_product_overview.htm">Product Overview</a>
+                                </li>
+                                <li role="presentation" class="divider" value="2" />
+                                <li value="3"><a href="https://bitbucket.org/fortepayments" target="_blank">Sample Code</a>
+                                </li>
+                                <li value="4"><a href="https://sandbox.forte.net/checkout/workbench/" target="_blank">Forte Checkout Workbench</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" value="2"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Web Services<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li value="1"><a href="api_resources/forte_api.htm">REST Web Services</a>
+                                </li>
+                                <li value="2"><a href="http://www.forte.net/devdocs/pdf/Merchant_Web_Services_Integration.pdf" target="_blank">SOAP Web Services for Merchants</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li value="3"><a href="bill pay/bp_product_overview.htm">BillPayIt™</a>
+                        </li>
+                        <li value="4"><a href="http://www.forte.net/devdocs/pdf/agi_integration.pdf" target="_blank">AGI</a>
+                        </li>
+                        <li value="5"><a href="http://www.forte.net/devdocs/pdf/file_specification.pdf" target="_blank">Batch</a>
+                            <li value="2"><a href="http://www.forte.net/devdocs/pdf/SWP_Integration.pdf" target="_blank">SWP</a>
+                            </li>
+                            <li class="dropdown" value="3"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Reference<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-submenu" value="1"> <a tabindex="-1" href="#">Code Samples</a><ul class="dropdown-menu"><li class="dropdown-submenu" value="1"><a tabindex="-1" href="#">Secure Web Pay Code Samples</a><ul class="dropdown-menu"><li value="1"><a href="http://www.forte.net/devdocs/samplecode/swpsamplevbnet.zip">ASP.net 2.0 VB.net</a></li><li value="2"><a href="http://www.forte.net/devdocs/samplecode/swpCsharpTemplate20090226v2.zip">ASP.net C#</a></li><li value="3"><a href="http://www.forte.net/devdocs/samplecode/swpsamplecsharp.zip">ASP.net C# Customizable</a></li><li value="4"><a href="reference/php_code_sample_swp_response.htm">PHP</a></li></ul></li><li class="dropdown-submenu" value="2"><a tabindex="-1" href="#">SOAP Web Services Code Samples</a><ul class="dropdown-menu"><li value="1"><a href="http://www.forte.net/devdocs/samplecode/CSharp.NET Web_Service_Sample_Code.zip">C#</a></li><li value="2"><a href="reference/hmac_md5_encryption_algorithm.htm">HMAC-MD5 Encryption</a></li><li value="3"><a href="http://www.forte.net/devdocs/samplecode/PHP_Web_Service_Auth_Sample (2).zip">PHP</a></li></ul></li></ul></li>
+                                    <li value="2"><a href="reference/faq.htm">FAQ</a>
+                                    </li>
+                                    <li value="3"><a href="forte_verify/forte_verify.htm">Forte Verify</a>
+                                    </li>
+                                    <li value="4"><a href="reference/preventing_duplicate_transactions.htm">Preventing Duplicate Transactions</a>
+                                    </li>
+                                    <li value="5"><a href="reference/response_codes.htm">Response Codes</a>
+                                    </li>
+                                    <li class="dropdown-submenu" value="6"> <a tabindex="-1" href="#">Third-Party Modules</a><ul class="dropdown-menu"><li value="1"> <a href="https://bitbucket.org/hallwaystudios/forte-payment-systems-whmcs-module/overview">WHMCS E-Check Payment Module (SWP)</a></li><li value="2"> <a href="http://www.paymentsgateway.com/Files/swp700.zip">VP-ASP Credit Card Payment Module (SWP)</a></li><li value="3"><a href="https://github.com/taylorbrooks/forte-payments-ruby">Ruby Wrapper for Forte's REST API</a></li><li value="4"><a href="https://github.com/dansancr/forte-c-">.NET Wrapper for Forte's REST API</a></li><li value="5"><a href="http://www.forte.net/devdocs/samplecode/forte-basic-rest-api-authentication.php.zip">PHP Authentication for Forte's REST API</a></li></ul></li>
+                                    <li value="7"><a href="reference/tokens.htm">Tokens</a>
+                                    </li>
+                                    <li value="8"><a href="reference/standard_entry_class_codes.htm">Understanding SEC Codes</a>
+                                    </li>
+                                    <li value="9"><a href="reference/ftp.htm">Using the Secure FTP Web Interface</a>
+                                    </li>
+                                    <li value="10"><a href="forte.js/forte.js.htm">Forte.js</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </li>
+                    </ul>
+                    <div id="headerimage">
+                        <div class="container" style="text-align:right">
+                            <div class="navbar-logo" style="vertical-align: middle">
+                                <p>
+                                    <img src="resources/images/forte-logo-inverted.png" />
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/.nav-collapse -->
+        </header>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <div class="wrapper">
+            <div class="container">
+                <div class="container-fluid">
+                    <div class="jumbotron-API">
+                        <div class="col-md-12">
+                            <img src="resources/images/forte logo.png" class="NoThumbnailHyperlinkedImage" />
+                            <h1 style="font-size: 96pt;">Forte.js<br /></h1>
+                            <p style="font-size: 24pt;">Total Control. Total Compliance.</p>
+                        </div>
+                    </div>
+                </div>
+                <hr width="100%" size="0" align="center" />
+                <div class="container-fluid">
+                    <div class="sidebar left">
+                        <div class="col-md-1">
+                            <div class="panel-group" id="accordion">
+                                <div class="panel panel-default" id="sidebar">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title"><a class="list-group-item" href="#overview">
+								Overview</a>
+                                        </h4>
+                                    </div>
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title"><a class="list-group-item" href="#Workflow">
+								Forte.js Workflow</a>
+                                        </h4>
+                                    </div>
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title"><a class="list-group-item" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+								Integrating Forte.js<span class="caret"></span></a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <h5><a href="#step1" class="subside">Step 1 - Generate  API Login ID</a>
+                                            </h5>
+                                            <h5><a href="#step2" class="subside">Step 2 - Include Forte.js </a>
+                                            </h5>
+                                            <h5><a href="#step3" class="subside">Step 3 - Add API Login ID</a>
+                                            </h5>
+                                            <h5><a href="#step4" class="subside">Step 4 - Send the Request</a>
+                                            </h5>
+                                            <h5><a href="#step5" class="subside">Step 5 - Receive the Token</a>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidebar right">
+                        <ul class="nav nav-pills">
+                            <li value="1"><a href="#home" data-toggle="tab">ruby</a>
+                            </li>
+                            <li value="2"><a href="#profile" data-toggle="tab">python</a>
+                            </li>
+                            <li value="3"><a href="#messages" data-toggle="tab">php</a>
+                            </li>
+                            <li value="4"><a href="#settings" data-toggle="tab">C#</a>
+                            </li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="home">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</div>
+                            <div class="tab-pane" id="profile">Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</div>
+                            <div class="tab-pane" id="messages">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</div>
+                            <div class="tab-pane" id="settings">Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</div>
+                        </div>
+                    </div>
+                    <div class="content fixed-fixed">
+                        <!-- Main hero unit for a primary marketing message or call to action -->
+                        <div class="container-fluid">
+                            <!-- Overview Section -->
+                            <h2 id="overview">Overview</h2>
+                            <p>Keep your transactions simple and PCI compliant with Forte.js. Adding Forte.js to your HTTPS-hosted site reduces your PCI exposure by posting sensitive customer information  directly to Forte's servers instead of your own. Forte.js also simplifies your payment processing by ensuring you don't have  to worry about the complex security implications that arise when credit card or echeck data hits your server. Instead, after receiving a customer POST, Forte returns a short GUID, single-use token to you, which you can use to create a transaction or a permanent payment token. </p>
+                            <h2 id="Workflow">Forte.js Workflow</h2>
+                            <p>
+                                <img src="resources/images/forte_js_workflow_814x608.png" style="width: 814;height: 608;" />
+                            </p>
+                            <h2 id="Integrating">Integrating Forte.js</h2>
+                            <p>You can use Forte.js with your own payment form or use Forte's customizable, third-generation payment form, Forte Checkout. The simple integration only requires a few lines of code.</p>
+                            <h3 id="step1">Step 1: Generate an API Login ID</h3>
+                            <p>Forte.js requires a merchant-specific API Login ID to accompany the POST call to the Forte servers. To generate this ID, complete the following steps:</p>
+                            <ol>
+                                <li value="1">Log into your <a href="https://www.paymentsgateway.net/vt3/login.aspx?ReturnUrl=%2fvt3" target="_blank">Virtual Terminal</a> Account.</li>
+                                <li value="2">Navigate to the <b>Gateway Settings</b> tab and click the <b>Gateway Key</b> icon (<img src="resources/images/gateway key icon_18x23.png" style="width: 18;height: 23;" class="NoThumbnailHyperlinkedImage"></img>). The following screen displays:
+			<br></br><br></br><img src="resources/images/gateway key screen.png" class="NoThumbnailHyperlinkedImage"></img></li>
+                                <br>
+                                </br>
+                                <li value="3">Click <img src="resources/images/generate button.png" class="NoThumbnailHyperlinkedImage" /> next to the <b>API Login ID</b> field. The application generates a new value.</li>
+                                <li value="4">
+                                    <p>Record this newly generated value in a secure location.</p>
+                                </li>
+                                <li value="5">Click <img src="resources/images/update button.png" class="NoThumbnailHyperlinkedImage" /> to save this value to your merchant account.</li>
+                            </ol>
+                            <h3 id="step2">Step 2: Include Forte.js in the Payment Form</h3>
+                            <p>Add the following Forte.js scripts to the <code>&lt;head&gt;</code> tag of your payment form.</p>
+                            <p>For the test environment:</p>
+                            <p><code class="prettyprint">&lt;script type="text/javascript" src="https://sandbox.forte.net/api/js/v1"&gt;&lt;/script&gt;</code>
+                            </p>
+                            <p>For the production environment:</p>
+                            <p><code class="prettyprint">&lt;script type="text/javascript" src="https://api.forte.net/js/v1"&gt;&lt;/script&gt;</code>
+                            </p>
+                            <h3 id="step3" style="background-color: #ffffff;">Step 3:&#160;Add the API Login ID to the Payment Form</h3>
+                            <p style="background-color: #ffffff;">Include your generated API Login ID in your payment form. </p>
+                            <h4>Simple Form</h4>
+                            <p style="background-color: #ffffff;">For simple payment forms in which you merely declare the Forte attributes you want to capture, add your generated API Login ID to the checkout action button. The code sample to the right displays this functionality in a simple form.</p>
+                            <p>&#160;</p>
+                            <p>&#160;</p>
+                            <p>&#160;</p>
+                            <p>&#160;</p>
+                            <p>&#160;</p>
+                            <p>&#160;</p>
+                            <p>&#160;</p>
+                            <p>&#160;</p>
+                            <p>&#160;</p>
+                            <p>&#160;</p>
+                            <p>&#160;</p>
+                            <p>&#160;</p>
+                            <p>&#160;</p>
+                            <h4>Custom Form</h4>
+                            <p>For more advanced payment forms, add your generated API Login ID using a custom JS script like the one displayed below:</p>
+                            <p>&#160;</p>
+                            <p>&#160;</p>
+                            <p>&#160;</p>
+                            <p>&#160;</p>
+                            <p>&#160;</p>
+                            <p>&#160;</p>
+                            <p>&#160;</p>
+                            <p>&#160;</p>
+                            <p>&#160;</p>
+                            <p>&#160;</p>
+                            <p>&#160;</p>
+                            <p>&#160;</p>
+                            <p>&#160;</p>
+                            <p>&#160;</p>
+                            <p>&#160;</p>
+                            <p>&#160;</p>
+                            <h3 id="step4" style="background-color: #ffffff;">Step 4: Send the Request</h3>
+                            <p>Send the payment information via a POST request using the following required parameters.</p>
+                            <table style="mc-table-style: url('resources/tablestyles/kbtable2.css');width: 825px;" class="TableStyle-KBTable2" cellspacing="10">
+                                <col class="TableStyle-KBTable2-Column-Column1" style="width: 206px;" />
+                                <col class="TableStyle-KBTable2-Column-Column1" style="width: 534px;" />
+                                <col class="TableStyle-KBTable2-Column-Column1" />
+                                <tbody>
+                                    <tr class="TableStyle-KBTable2-Body-Body1">
+                                        <td style="font-size: 10pt;font-weight: bold;" class="TableStyle-KBTable2-BodyE-Column1-Body1">Parameter</td>
+                                        <td style="font-size: 10pt;font-weight: bold;" class="TableStyle-KBTable2-BodyE-Column1-Body1">Description</td>
+                                        <td style="font-size: 10pt;font-weight: bold;text-align: center;" class="TableStyle-KBTable2-BodyD-Column1-Body1">Type</td>
+                                    </tr>
+                                    <tr class="TableStyle-KBTable2-Body-Body1">
+                                        <td class="TableStyle-KBTable2-BodyE-Column1-Body1"><code>card_number</code>
+                                        </td>
+                                        <td class="TableStyle-KBTable2-BodyE-Column1-Body1">The customer's credit card number</td>
+                                        <td class="TableStyle-KBTable2-BodyD-Column1-Body1" style="text-align: center;">string</td>
+                                    </tr>
+                                    <tr class="TableStyle-KBTable2-Body-Body1">
+                                        <td class="TableStyle-KBTable2-BodyE-Column1-Body1"><code>expire_year</code>
+                                        </td>
+                                        <td class="TableStyle-KBTable2-BodyE-Column1-Body1">The expiration year of the customer's credit card [max length = 4]</td>
+                                        <td class="TableStyle-KBTable2-BodyD-Column1-Body1" style="text-align: center;">string</td>
+                                    </tr>
+                                    <tr class="TableStyle-KBTable2-Body-Body1">
+                                        <td class="TableStyle-KBTable2-BodyE-Column1-Body1"><code>expire_month</code>
+                                        </td>
+                                        <td class="TableStyle-KBTable2-BodyE-Column1-Body1">The expiration month of the customer's credit card [max length = 2]</td>
+                                        <td class="TableStyle-KBTable2-BodyD-Column1-Body1" style="text-align: center;">string</td>
+                                    </tr>
+                                    <tr class="TableStyle-KBTable2-Body-Body1">
+                                        <td class="TableStyle-KBTable2-BodyB-Column1-Body1"><code>cvv</code>
+                                        </td>
+                                        <td class="TableStyle-KBTable2-BodyB-Column1-Body1">The card verification value of the customer's credit card [max length = 5]</td>
+                                        <td class="TableStyle-KBTable2-BodyA-Column1-Body1" style="text-align: center;">string</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <h4>Complete Simple Form</h4>
+                            <p>???</p>
+                            <h4>Complete Custom Form</h4>
+                            <p>???</p>
+                            <h3 id="step5">Step 5: Receive the One-Time Token Response</h3>
+                            <p>The AJAX callback that Forte sends in response to the request echoes back all the data sent in the request (save for the <code>card_number</code> parameter). The table below displays the available response parameters:</p>
+                            <table style="mc-table-style: url('resources/tablestyles/kbtable2.css');width: 825px;" class="TableStyle-KBTable2" cellspacing="10">
+                                <col class="TableStyle-KBTable2-Column-Column1" style="width: 206px;" />
+                                <col class="TableStyle-KBTable2-Column-Column1" style="width: 534px;" />
+                                <col class="TableStyle-KBTable2-Column-Column1" />
+                                <tbody>
+                                    <tr class="TableStyle-KBTable2-Body-Body1">
+                                        <td style="font-size: 10pt;font-weight: bold;" class="TableStyle-KBTable2-BodyE-Column1-Body1">Parameter</td>
+                                        <td style="font-size: 10pt;font-weight: bold;" class="TableStyle-KBTable2-BodyE-Column1-Body1">Description</td>
+                                        <td style="font-size: 10pt;font-weight: bold;text-align: center;" class="TableStyle-KBTable2-BodyD-Column1-Body1">Type</td>
+                                    </tr>
+                                    <tr class="TableStyle-KBTable2-Body-Body1">
+                                        <td class="TableStyle-KBTable2-BodyE-Column1-Body1"><code>onetime_token</code>
+                                        </td>
+                                        <td class="TableStyle-KBTable2-BodyE-Column1-Body1">The one-time use token that Forte returns (e.g., <code>ott_452343423450)</code><p><b style="text-decoration: underline;">NOTE:</b> One-time tokens expire after 10 minutes.</p></td>
+                                        <td class="TableStyle-KBTable2-BodyD-Column1-Body1" style="text-align: center;">string</td>
+                                    </tr>
+                                    <tr class="TableStyle-KBTable2-Body-Body1">
+                                        <td class="TableStyle-KBTable2-BodyE-Column1-Body1"><code>last_4</code>
+                                        </td>
+                                        <td class="TableStyle-KBTable2-BodyE-Column1-Body1">The last four digits of the customer's credit card number</td>
+                                        <td class="TableStyle-KBTable2-BodyD-Column1-Body1" style="text-align: center;">string</td>
+                                    </tr>
+                                    <tr class="TableStyle-KBTable2-Body-Body1">
+                                        <td class="TableStyle-KBTable2-BodyE-Column1-Body1"><code>expire_year</code>
+                                        </td>
+                                        <td class="TableStyle-KBTable2-BodyE-Column1-Body1">The expiration year of the customer's credit card [max length = 4]</td>
+                                        <td class="TableStyle-KBTable2-BodyD-Column1-Body1" style="text-align: center;">string</td>
+                                    </tr>
+                                    <tr class="TableStyle-KBTable2-Body-Body1">
+                                        <td class="TableStyle-KBTable2-BodyE-Column1-Body1"><code>expire_month</code>
+                                        </td>
+                                        <td class="TableStyle-KBTable2-BodyE-Column1-Body1">The expiration month of the customer's credit card [max length = 2]</td>
+                                        <td class="TableStyle-KBTable2-BodyD-Column1-Body1" style="text-align: center;">string</td>
+                                    </tr>
+                                    <tr class="TableStyle-KBTable2-Body-Body1">
+                                        <td class="TableStyle-KBTable2-BodyE-Column1-Body1"><code>cvv</code>
+                                        </td>
+                                        <td class="TableStyle-KBTable2-BodyE-Column1-Body1">The card verification value of the customer's credit card [max length = 5]</td>
+                                        <td class="TableStyle-KBTable2-BodyD-Column1-Body1" style="text-align: center;">string</td>
+                                    </tr>
+                                    <tr class="TableStyle-KBTable2-Body-Body1">
+                                        <td class="TableStyle-KBTable2-BodyB-Column1-Body1"><code>event</code>
+                                        </td>
+                                        <td class="TableStyle-KBTable2-BodyB-Column1-Body1">
+                                            <p>Indicates whether or not Forte successfully created the one-time use token. Use one of the following values for this parameter:</p>
+                                            <ol style="list-style-type: lower-alpha;">
+                                                <li value="1"><code>success</code>
+                                                </li>
+                                                <li value="2"><code>failure</code>
+                                                </li>
+                                            </ol>
+                                        </td>
+                                        <td class="TableStyle-KBTable2-BodyA-Column1-Body1" style="text-align: center;">string</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>The code sample below displays a successful event response.</p><pre class="prettyprint"><p>{"event":"success","response_code":"A01","response_description":"APPROVED","onetime_token":"OTT_1OTOETSERSSRSLHV64S8MG","card_type":"VISA","last_4":"1111","cvv":"123","expire_year":"2015","expire_month":"01"}</p></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="push">
+            </div>
+        </div>
+        <div class="footer">
+            <!-- Footer -->
+            <!--</div>-->
+            <div class="footer">
+                <div class="footer2">
+                    <div class="row">
+                        <div class="col-xs-2 col-sm-6 col-md-12">
+                        </div>
+                    </div>
+                    <div class="copyright">
+                        <div class="row">
+                            <div class="six mobile-one column">
+                                <p><span> © 2015 Forte Payment Systems</span> <span><a href="http://www.forte.net/privacy" target="_blank" class="footer">Privacy Policy</a></span> <span><a href="http://www.forte.net/legal" target="_blank" class="footer">Legal</a></span></p>
+                            </div>
+                            <div class="six columns" style="text-align: right;">Forte Payment Systems is a registered ISO of Wells Fargo Bank, N.A., and Walnut Creek, CA.
+                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JavaScript
+		================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js">
+        </script>
+        <script src="resources/js/holder.js">
+        </script>
+        <script src="resources/js/scroll.js">
+        </script>
+        <script scr="../JS/plus.js">
+        </script>
+    </body>
+</html>

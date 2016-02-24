@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WebHelpSystem DefaultUrl="index.htm" Toc="Data/Toc.js" Index="Data/Index.js" Concepts="Data/Concepts.xml" BrowseSequence="Data/BrowseSequence.js" SearchDatabase="Data/Search.xml" Alias="Data/Alias.xml" Synonyms="Data/Synonyms.xml" SearchFilterSet="Data/Filters.xml" SkinName="NewSkin" Skins="HTML5,NewSkin" BuildTime="2/24/2016 2:25:10 PM" BuildVersion="10.2.2.0" TargetType="WebHelp2" SkinTemplateFolder="Skin/" InPreviewMode="false" MoveOutputContentToRoot="true" MakeFileLowerCase="true" UseCustomTopicFileExtension="false">
+    <CatapultSkin Version="1" SkinType="WebHelp2" Comment="HTML5 skin" Anchors="Width,Height" Width="800" Height="600" Top="0" Left="0" Bottom="0" Right="0" Tabs="" DefaultTab="TOC" UseBrowserDefaultSize="True" UseDefaultBrowserSetup="true" AutoSyncTOC="true" CommentsInTopic="false" DisplaySearchBar="false" Name="HTML5">
+        <Toolbar EnableCustomLayout="true" Buttons="" />
+        <WebHelpOptions HideNavigationOnStartup="true" NavigationPaneWidth="0" />
+    </CatapultSkin>
+    <CatapultSkin Version="2" SkinType="WebHelp2" ComponentType="MasterPage" TemplateName="Fluid" Comment="HTML5 Top Navigation skin" EnableResponsiveOutput="True" Name="NewSkin">
+        <WebHelpOptions NavigationPanePosition="Right" />
+    </CatapultSkin>
+</WebHelpSystem>
